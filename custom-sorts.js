@@ -7,16 +7,17 @@ function ageSort(users) {
 function oddEvenSort(arr) {
   // Your code here
   // oddEvenSort sorts odds before evens
-  let sortedArr = arr.sort((a, b) => {
-    if (a % 2 === 0 && b % 2 === 1) {
-      return -1;
-    } else if (a % 2 === 1 && b % 2 === 0) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
-  return sortedArr;
+  arr.sort(function(a,b){
+    if(a%2 !== 0 && b%2 === 0){
+      return -1
+    };
+
+    if(a%2 === 0 && b&2!==0){
+      return 1
+    };
+    return a-b;
+  })
+  return arr;
 }
 
 function validAnagrams(s, t) {
